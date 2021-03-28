@@ -95,9 +95,9 @@ class _ContactFormState extends State<ContactForm>{
   void updateName(name){
     contact.setName(name);
   }
-  void updatePhone(phone) => setState(() { contact.phone = phone;});
-  void updateEmail(email) => setState(() { contact.email = email; });
-  void updateCpf(cpf) => setState(() { contact.email = cpf; });
+  void updatePhone(phone)  { contact.phone = phone;}
+  void updateEmail(email) { contact.email = email; }
+  void updateCpf(cpf)  { contact.email = cpf; }
 
   TextFieldValidator emailValidator(){
     return EmailValidator(errorText: 'E-mail inválido');

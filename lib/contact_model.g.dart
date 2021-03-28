@@ -68,7 +68,10 @@ mixin _$ContactModel on BaseContactModel, Store {
   String toString() {
     return '''
 name: ${name},
-email: ${email}
+email: ${email},
+cpf: ${cpf}, 
+phone: ${phone},  
+type: ${type}
     ''';
   }
 }
