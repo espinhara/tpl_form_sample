@@ -1,0 +1,1 @@
+enum ContactType {HOME, WORKER, FAVORITE, CELLPHONE, ANYONE}
