@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'contact_model.dart';
-import 'contact_form.dart';
+import 'pages/list_contact/conatct_list_page.dart';
+import 'pages/new_contact/contact_model.dart';
+import 'pages/new_contact/contact_form.dart';
 
 
 void main() {
@@ -12,32 +13,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Contact Form',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  ContactModel contact = new ContactModel();
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Observer( builder:(_)=> Text(contact.name ?? '')),
-      ),
-      body: ContactForm(contact: contact,)
+      initialRoute: "/",
+      routes: {
+        '/': (_) => ListContactPage(),
+      },
     );
   }
 }
